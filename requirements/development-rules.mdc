@@ -1,0 +1,219 @@
+# Reglas de Desarrollo - Sistema de Gestión de Productos
+
+## 📋 Información del Proyecto
+
+- **Nombre**: Sistema de Gestión de Productos
+- **Versión**: 1.0.0
+- **Node.js**: 22.x (LTS)
+- **Backend**: NestJS v10 + TypeScript + SQLite
+- **Frontend**: React 18+ + Vite + TypeScript
+
+## 🗺️ Árbol de Navegación y Requerimientos
+
+### Estructura de Navegación Principal
+
+```
+📱 Sistema de Gestión de Productos
+├── 🔐 Autenticación
+│   ├── /login - Inicio de sesión
+│   ├── /register - Registro de usuarios
+│   └── /forgot-password - Recuperar contraseña
+├── 🏠 Dashboard
+│   └── /dashboard - Panel principal
+├── 📦 Gestión de Productos
+│   ├── /products - Lista de productos
+│   ├── /products/create - Crear producto
+│   ├── /products/:id - Ver producto
+│   └── /products/:id/edit - Editar producto
+├── 🏷️ Gestión de Categorías
+│   ├── /categories - Lista de categorías
+│   ├── /categories/create - Crear categoría
+│   ├── /categories/:id - Ver categoría
+│   └── /categories/:id/edit - Editar categoría
+├── 📊 Reportes y Analytics
+│   ├── /reports/sales - Reporte de ventas
+│   ├── /reports/inventory - Reporte de inventario
+│   └── /reports/performance - Reporte de rendimiento
+├── 👥 Gestión de Usuarios
+│   ├── /users - Lista de usuarios
+│   ├── /users/create - Crear usuario
+│   ├── /users/:id - Ver usuario
+│   └── /users/:id/edit - Editar usuario
+├── ⚙️ Configuración
+│   ├── /settings/profile - Perfil de usuario
+│   ├── /settings/company - Configuración de empresa
+│   └── /settings/system - Configuración del sistema
+└── 📚 Ayuda
+    ├── /help - Centro de ayuda
+    └── /help/api - Documentación de API
+```
+
+## 📋 Archivos de Requerimientos por Ruta
+
+Cada ruta tendrá su archivo de requerimientos correspondiente en la estructura:
+
+```
+requirements/
+├── development-rules.mdc          # Este archivo
+├── implementation-plan.md         # Plan de implementación por fases
+├── auth/
+│   ├── login.md
+│   ├── register.md
+│   └── forgot-password.md
+├── dashboard/
+│   └── dashboard.md
+├── products/
+│   ├── products-list.md
+│   ├── product-create.md
+│   ├── product-view.md
+│   └── product-edit.md
+├── categories/
+│   ├── categories-list.md
+│   ├── category-create.md
+│   ├── category-view.md
+│   └── category-edit.md
+├── reports/
+│   ├── sales-report.md
+│   ├── inventory-report.md
+│   └── performance-report.md
+├── users/
+│   ├── users-list.md
+│   ├── user-create.md
+│   ├── user-view.md
+│   └── user-edit.md
+├── settings/
+│   ├── profile.md
+│   ├── company.md
+│   └── system.md
+└── help/
+    ├── help-center.md
+    └── api-docs.md
+```
+
+## 🛠️ Configuración de Herramientas
+
+### Node.js y NPM
+- **Versión**: Node.js 22.x (LTS)
+- **Package Manager**: npm (versión incluida con Node.js)
+- **Scripts**: Usar npm scripts para todas las tareas
+
+### TypeScript
+- **Versión**: 5.x
+- **Configuración**: Strict mode habilitado
+- **Target**: ES2022
+- **Module**: ESNext
+
+### ESLint y Prettier
+- **ESLint**: Configuración para TypeScript
+- **Prettier**: Formateo automático
+- **Integración**: ESLint + Prettier sin conflictos
+
+## 📝 Convenciones de Código
+
+### Naming Conventions
+
+#### Backend (NestJS)
+- **Archivos**: kebab-case (ej: `product.service.ts`)
+- **Clases**: PascalCase (ej: `ProductService`)
+- **Métodos**: camelCase (ej: `getProductById`)
+- **Variables**: camelCase (ej: `productId`)
+- **Constantes**: UPPER_SNAKE_CASE (ej: `MAX_PRODUCTS`)
+- **Interfaces**: PascalCase con prefijo I (ej: `IProduct`)
+- **Enums**: PascalCase (ej: `ProductStatus`)
+
+#### Frontend (React)
+- **Componentes**: PascalCase (ej: `ProductCard.tsx`)
+- **Hooks**: camelCase con prefijo use (ej: `useProducts`)
+- **Archivos**: kebab-case (ej: `product-card.tsx`)
+- **CSS Classes**: kebab-case (ej: `product-card-container`)
+
+## 📦 Dependencias
+
+### Backend Dependencias Principales
+```json
+{
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/typeorm": "^10.0.0",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/swagger": "^7.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "@nestjs/passport": "^10.0.0",
+    "typeorm": "^0.3.0",
+    "sqlite3": "^5.1.0",
+    "class-validator": "^0.14.0",
+    "class-transformer": "^0.5.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0",
+    "supertest": "^6.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-loader": "^9.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+```
+
+### Frontend Dependencias Principales
+```json
+{
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "zustand": "^4.0.0",
+    "@tanstack/react-query": "^5.0.0",
+    "axios": "^1.0.0",
+    "react-hook-form": "^7.0.0",
+    "@hookform/resolvers": "^3.0.0",
+    "zod": "^3.0.0",
+    "@mui/material": "^5.0.0",
+    "@mui/icons-material": "^5.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/user-event": "^14.0.0"
+  }
+}
+```
+
+---
+
+**Última actualización**: Enero 2025
+**Versión del documento**: 1.0.0
+**Mantenedor**: Equipo de Desarrollo
+description:
+globs:
+alwaysApply: false
+---

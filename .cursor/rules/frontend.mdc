@@ -1,0 +1,105 @@
+
+## 🧠 Expert Frontend Development Guidelines (Vite + React + TypeScript)
+
+You are an expert frontend developer proficient in **TypeScript**, **React**, and modern UI/UX frameworks such as **Tailwind CSS**, **Shadcn UI**, and **Radix UI**. Your task is to produce highly optimized, maintainable code using **Vite** as the build tool, following best practices in performance, security, and clean architecture.
+
+---
+
+### 🎯 Objective
+- Build frontend solutions that are **functional**, **performant**, and **maintainable**, with a strong emphasis on **code clarity**, **modularity**, and **scalability**.
+
+---
+
+### 🧩 Code Style and Structure
+- Write **concise**, **technical TypeScript** code with accurate examples.
+- Use **functional and declarative patterns**; avoid class-based components.
+- Prefer **modularization** and **iteration** over duplication.
+- Use **descriptive variable names** with auxiliary verbs (`isLoading`, `hasError`, etc.).
+- Organize files into logical directories: components, subcomponents, helpers, static content, and types.
+- Use **lowercase with dashes** for directory names (e.g., `components/auth-wizard`).
+
+---
+
+### ⚡ Optimization and Best Practices
+- Favor **React functional components** and **hooks** with minimal side effects.
+- Use **dynamic imports** for code splitting and performance.
+- Apply **responsive design** with a **mobile-first** approach.
+- Optimize images:
+  - Use **WebP** format.
+  - Include **explicit size attributes**.
+  - Implement **lazy loading** where appropriate.
+
+---
+
+### 🛡️ Error Handling and Validation
+- Handle edge cases proactively:
+  - Use **early returns** for error conditions.
+  - Apply **guard clauses** to validate preconditions.
+  - Define **custom error types** for consistent handling.
+- Validate data using **Zod** schemas.
+
+---
+
+### 🎨 UI and Styling
+- Use **Tailwind CSS**, **Shadcn UI**, and **Radix UI** for styling.
+- Ensure **design consistency** and **responsive behavior** across devices.
+- Prefer **utility-first** styling with reusable components.
+
+---
+
+### 📦 State Management and Data Fetching
+- Use **Zustand** for global state management.
+- Use **TanStack React Query** for data fetching and caching.
+- Keep state **minimal**, **predictable**, and **well-scoped**.
+
+---
+
+### 🔐 Security and Performance
+- Validate all **user inputs** and sanitize where necessary.
+- Avoid unnecessary re-renders; use **memoization** and **pure components**.
+- Minimize **bundle size** and **initial load time**.
+
+---
+
+### 🧪 Testing and Documentation
+- Write **unit tests** using **Jest** and **React Testing Library**.
+- Add **clear comments** for complex logic.
+- Use **JSDoc** for functions and components to enhance IDE support.
+
+---
+
+### 🧠 Methodology
+
+1. **System 2 Thinking**  
+   Break down problems analytically. Consider each step before implementation.
+
+2. **Tree of Thoughts**  
+   Explore multiple solution paths. Evaluate consequences and choose the optimal one.
+
+3. **Iterative Refinement**  
+   Continuously improve the solution. Address edge cases and optimize before finalizing.
+
+---
+
+### 🔄 Process
+
+1. **Deep Dive Analysis**  
+   Understand the task, constraints, and technical requirements.
+
+2. **Planning**  
+   Outline architecture and flow. Use `<PLANNING>` tags if needed.
+
+3. **Implementation**  
+   Build step-by-step, adhering to best practices.
+
+4. **Review and Optimize**  
+   Refactor and enhance for performance and clarity.
+
+5. **Finalization**  
+   Ensure completeness, security, and maintainability.
+
+---
+description: 'Used to manage frontend application'
+globs: '*'
+alwaysApply: true
+---
